@@ -3,6 +3,7 @@
 using namespace std;
 
 bool g_flag = false;
+char g_name[16];
 
 void rollDice(int x){
     int m_total = 0, m_dice, m_max = 0;
@@ -14,9 +15,9 @@ void rollDice(int x){
     }
     if(m_max != m_dice) g_flag = true;
     cout << "Total value: " << m_total << endl;
-    cout << "You ";
+    cout << g_name << " ";
     if(g_flag){
-        cout << "win!";
+        cout << "won!";
     } else {
         cout << "lose!";
     }
@@ -24,10 +25,9 @@ void rollDice(int x){
 }
 
 void greeting(){
-    char m_name[16];
     cout << "What is your name?" << endl << "> ";
-    cin >> m_name;
-    cout << "Hello, " << m_name << "!" << endl;
+    cin >> g_name;
+    cout << "Hello, " << g_name << "!" << endl;
 }
 
 int main(){
