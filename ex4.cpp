@@ -23,7 +23,16 @@ void rollDice(int x){
     cout << endl;
 }
 
+void greeting(){
+    char m_name[16];
+    cout << "What is your name?" << endl << "> ";
+    cin >> m_name;
+    cout << "Hello, " << m_name << "!" << endl;
+}
+
 int main(){
+    greeting();
+    //task4で追加したあいさつを表示する処理
     cout << "Rolling dice..." << endl;
     srand(time(NULL));
     rollDice(2);
