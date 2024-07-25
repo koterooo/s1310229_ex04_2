@@ -2,15 +2,25 @@
 #include <ctime>
 using namespace std;
 
+bool g_flag = false;
+
 void rollDice(int x){
-    int m_total = 0;
-    int m_dice;
+    int m_total = 0, m_dice, m_max = 0;
     for(int i=0; i<x; i++){
         m_dice = rand()%6 + 1;
         m_total += m_dice;
+        if(m_dice > m_max) m_max = m_dice;
         cout << "Die " << i+1 << ": " << m_dice << endl; 
     }
+    if(m_max != m_dice) g_flag = true;
     cout << "Total value: " << m_total << endl;
+    cout << "You ";
+    if(g_flag){
+        cout << "win!";
+    } else {
+        cout << "lose!";
+    }
+    cout << endl;
 }
 
 int main(){
